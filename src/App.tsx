@@ -1,1 +1,9 @@
-export const App = () => <div>Hello! this is a new version</div>;
+import { Tasks } from './tasks';
+
+export const App = () => {
+    return (
+        <div>
+            <Tasks />
+        </div>
+    );
+};
