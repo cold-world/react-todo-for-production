@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CreateTask } from './CreateTask';
+import { TaskList } from './TaskList';
 
 export const Tasks = () => {
     const [items, setItems] = useState<string[]>([]);
@@ -13,11 +14,7 @@ export const Tasks = () => {
                     })
                 }
             />
-            <ul>
-                {items.map((item: string) => (
-                    <li key={item}>{item}</li>
-                ))}
-            </ul>
+            <TaskList tasks={items} />
         </div>
     );
 };

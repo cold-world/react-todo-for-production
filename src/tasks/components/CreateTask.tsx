@@ -18,6 +18,7 @@ export const CreateTask: FunctionComponent<CreateTaskProps> = ({ onSubmit }) => 
                 }}
             />
             <Button
+                variant="contained"
                 onClick={async () => {
                     if (taskTitle !== '') {
                         try {
