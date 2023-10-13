@@ -1,14 +1,15 @@
 import { FunctionComponent } from 'react';
+import { Task } from '../models';
 
 type TaskListProps = {
-    tasks: string[];
+    tasks: Task[];
 };
 
 export const TaskList: FunctionComponent<TaskListProps> = ({ tasks }) => {
     return (
         <ul>
-            {tasks.map((task: string) => (
-                <li key={task}>{task}</li>
+            {tasks.map((task: Task) => (
+                <li key={task.getID()}>{task.getTitle()}</li>
             ))}
         </ul>
     );
