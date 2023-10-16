@@ -1,9 +1,11 @@
+import { Container, CssBaseline } from '@mui/material';
 import { Tasks } from './tasks';
 
 export const App = () => {
     return (
-        <div>
+        <Container maxWidth="lg" sx={{ marginTop: '16px' }}>
+            <CssBaseline />
             <Tasks />
-        </div>
+        </Container>
     );
 };

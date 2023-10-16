@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Task } from '../models';
+import { Checkbox, FormControlLabel, List, ListItem } from '@mui/material';
 
 type TaskListProps = {
     tasks: Task[];
@@ -7,10 +8,12 @@ type TaskListProps = {
 
 export const TaskList: FunctionComponent<TaskListProps> = ({ tasks }) => {
     return (
-        <ul>
+        <List>
             {tasks.map((task: Task) => (
-                <li key={task.getID()}>{task.getTitle()}</li>
+                <ListItem key={task.getID()}>
+                    <FormControlLabel control={<Checkbox />} label={task.getTitle()} labelPlacement="end" />
+                </ListItem>
             ))}
-        </ul>
+        </List>
     );
 };

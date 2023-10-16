@@ -1,4 +1,4 @@
-import { Button, Input } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import { useState, ChangeEvent, FunctionComponent, FormEvent } from 'react';
 
 type CreateTaskProps = {
@@ -10,15 +10,33 @@ export const CreateTask: FunctionComponent<CreateTaskProps> = ({ onSubmit }) => 
 
     return (
         <form onSubmit={(e: FormEvent<HTMLFormElement>) => e.preventDefault()}>
-            <Input
+            <TextField
+                size="small"
                 value={taskTitle}
                 onChange={(e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
                     e.preventDefault();
                     setTaskTitle(e.target.value);
                 }}
+                sx={{
+                    width: {
+                        xs: '100%',
+                        sm: '70%',
+                    },
+                }}
             />
             <Button
                 variant="contained"
+                size="large"
+                sx={{
+                    width: {
+                        xs: '100%',
+                        sm: 'unset',
+                    },
+                    marginTop: {
+                        xs: '12px',
+                        sm: 'unset',
+                    },
+                }}
                 onClick={async () => {
                     if (taskTitle !== '') {
                         try {
