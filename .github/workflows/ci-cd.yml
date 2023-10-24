@@ -36,7 +36,7 @@ jobs:
        uses: cypress-io/github-action@v2
        with:
          browser: chrome
-         config-file: ./cypress.config.json
+         config-file: ./cypress.config.ts
          env: WEB_APP_URI=${{ steps.deploy_dev.outputs.NETLIFY_URL }}
      - name: Deploy to prod environment
        uses: netlify/actions/cli@master

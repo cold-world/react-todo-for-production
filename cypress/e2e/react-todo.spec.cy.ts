@@ -1,6 +1,6 @@
 describe('test home screen of the app', () => {
     beforeEach(() => {
-        cy.visit('WEB_APP_URI' || 'http://localhost:3001');
+        cy.visit(Cypress.env('WEB_APP_URI') || 'http://localhost:3001');
     });
 
     it('should not display any tasks when app running for the first time', () => {
